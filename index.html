@@ -1,25 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Software library and download portal" />
-  <title>SoftShelf — Software downloads</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Public files</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar"><div class="shell topbar-inner"><a class="brand" href="#"><span class="brand-badge">S</span><span>Soft<span>Shelf</span></span></a><nav class="main-nav"><a class="active" href="#home">Home</a><a href="#categories">Categories</a><a href="#latest">Latest releases</a><a href="#about">About</a></nav><button class="menu-button">☰</button><div class="nav-search"><span>⌕</span><input id="nav-search" type="search" placeholder="Search software..." /></div></div></header>
-  <main id="home" class="shell">
-    <section class="hero"><div class="hero-copy"><div class="kicker">THE SOFTWARE LIBRARY</div><h1>Find the tools<br><span>that move you forward.</span></h1><p>Curated software, clean downloads, and everything you need to get started.</p><div class="hero-search"><span>⌕</span><input id="hero-search" type="search" placeholder="What are you looking for?" /><button id="hero-search-button">Search</button></div><div class="quick-links"><span>Popular:</span><button data-query="Adobe">Adobe</button><button data-query="Windows">Windows</button><button data-query="Design">Design</button><button data-query="Video">Video</button></div></div><div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-card hero-card-main"><div class="app-logo logo-purple">Ps</div><div><b>Photoshop</b><small>Creative Suite</small></div><span class="arrow">↗</span></div><div class="hero-card hero-card-small"><div class="app-logo logo-blue">V</div><div><b>VS Code</b><small>Development</small></div></div><div class="floating-star">✦</div><div class="floating-plus">+</div></div></section>
-    <section id="categories" class="section"><div class="section-head"><div><div class="kicker">BROWSE THE LIBRARY</div><h2>Explore categories</h2></div><a class="view-all" href="#latest">View all <span>→</span></a></div><div class="category-grid"><button class="category-card" data-query="Design"><span class="category-icon icon-design">✦</span><b>Design & Creative</b><small>128 apps <span>→</span></small></button><button class="category-card" data-query="Video"><span class="category-icon icon-video">▶</span><b>Video & Audio</b><small>96 apps <span>→</span></small></button><button class="category-card" data-query="Windows"><span class="category-icon icon-system">⊞</span><b>System & Utilities</b><small>84 apps <span>→</span></small></button><button class="category-card" data-query="Development"><span class="category-icon icon-dev">&lt;/&gt;</span><b>Development</b><small>72 apps <span>→</span></small></button></div></section>
-    <section id="latest" class="section"><div class="section-head"><div><div class="kicker">FRESH FROM THE SHELF</div><h2>Latest releases</h2></div><div id="result-count" class="result-count">8 applications</div></div><div id="software-grid" class="software-grid"></div><p id="empty-state" class="empty-state" hidden>No software found. Try another search.</p></section>
-    <section id="about" class="download-banner"><div><div class="kicker">YOUR OWN DOWNLOAD PORTAL</div><h2>Have a file to share?</h2><p>Add a public Google Drive link and turn it into a clean download page.</p></div><div class="drive-form"><input id="drive-input" type="text" placeholder="Paste Google Drive link..." /><button id="generate-button">Generate link <span>↗</span></button></div><p id="input-message" class="form-message"></p></section>
-    <section id="result-section" class="generated" hidden><div><b id="file-name">Your file</b><small id="file-id"></small></div><a id="download-button" href="#" target="_blank" rel="noopener">Download file ↓</a><button id="copy-button">Copy link</button><p id="copy-message" class="form-message"></p></section>
+  <main>
+    <header><h1>Public files</h1><button id="refresh-button" type="button">Refresh</button></header>
+    <p class="subtitle">Files uploaded to the Google Drive public folder.</p>
+    <p id="status" class="status"></p>
+    <section><div class="section-title"><h2>Files</h2><span id="file-count"></span></div><div id="file-list"></div><div id="empty-state" class="empty" hidden>No files found.</div></section>
   </main>
-  <footer><div class="shell"><a class="brand" href="#"><span class="brand-badge">S</span><span>Soft<span>Shelf</span></span></a><span>Independent software discovery, made simple.</span><span>© 2026 SoftShelf</span></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
