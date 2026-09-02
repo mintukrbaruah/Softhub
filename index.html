@@ -1,5 +1,102 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SoftHub - Downloads</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
-<body><header class="site-header"><div class="shell nav"><a class="logo" href="./">Soft<span>Hub</span></a><nav><a class="active" href="#files">Downloads</a><a href="#categories">Categories</a></nav><div class="search"><span>⌕</span><label class="sr-only" for="search">Search files</label><input id="search" type="search" placeholder="Search files by name..."><button id="clear-search" type="button" aria-label="Clear search">×</button></div></div></header>
-<main class="shell"><section class="welcome"><div><p class="eyebrow">SOFTWARE DOWNLOAD CENTER</p><h1>Find your next<br><span>essential tool.</span></h1><p class="lead">Clean, organized downloads from the public Drive library.</p></div><div class="welcome-stat"><strong id="file-count">Loading...</strong><span id="file-count-label">files available</span></div></section><section id="categories" class="category-bar"><button class="category active" data-category="all">All files</button><div id="category-buttons"></div></section><section id="files"><div class="section-heading"><div><p class="eyebrow">LATEST UPLOADS</p><h2>Browse files</h2></div><button id="refresh" class="refresh" type="button">↻ Refresh</button></div><div id="file-list" class="file-grid"></div><div id="empty" class="empty" hidden>No files found.</div><p id="status" class="status"></p></section></main><footer><div class="shell"><span>SoftHub</span><span>Files are served from Google Drive.</span></div></footer><script src="script.js"></script></body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DriveShelf | Download Hub</title>
+    <meta name="description" content="Public file library powered by Google Drive." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="DriveShelf home">
+          <span class="brand-mark">D</span>
+          <span class="brand-name">Drive<span>Shelf</span></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#">Home</a>
+          <a href="#library">Library</a>
+          <a href="#categories">Categories</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="tag">PUBLIC DOWNLOAD HUB</p>
+          <h1>Instant access to your Google Drive files.</h1>
+          <p class="subtitle">
+            Browse your collection in a clean, modern download portal with category filters and quick search.
+          </p>
+
+          <div class="hero-actions">
+            <a class="cta-primary" href="#library">Browse files</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="mini-header">
+            <span class="dot green"></span>
+            <span class="dot blue"></span>
+            <span class="dot orange"></span>
+          </div>
+
+          <div class="panel-body">
+            <p class="mini-label">Live library</p>
+            <h3>Public folder</h3>
+            <div class="panel-stats">
+              <div>
+                <strong id="file-count">0</strong>
+                <span>Files</span>
+              </div>
+              <div>
+                <strong id="category-count">0</strong>
+                <span>Categories</span>
+              </div>
+            </div>
+            <div class="panel-bar">
+              <span></span>
+            </div>
+            <div class="panel-meta">
+              <span>Google Drive</span>
+              <span>Fast access</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-wrap" aria-label="Search files">
+        <span class="search-icon">⌕</span>
+        <input id="search-input" type="search" placeholder="Search files or category names" aria-label="Search files" />
+      </section>
+
+      <section id="library" class="library" aria-labelledby="library-title">
+        <div class="library-head">
+          <div>
+            <p class="tag small">LIBRARY</p>
+            <h2 id="library-title">Available downloads</h2>
+          </div>
+        </div>
+
+        <div id="file-grid" class="file-grid" aria-live="polite"></div>
+
+        <div id="empty-state" class="empty-state" hidden>
+          <div class="empty-icon">○</div>
+          <h3>No files found</h3>
+          <p>Try a different keyword or refresh the file list.</p>
+        </div>
+      </section>
+
+      <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
