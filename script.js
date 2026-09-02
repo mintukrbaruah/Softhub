@@ -1,5 +1,5 @@
 const FOLDER_ID = "1Ors4wVon1u24w-CvF3XYNEgy2SAIWayf";
-const API_KEY = "PASTE_YOUR_RESTRICTED_GOOGLE_DRIVE_API_KEY_HERE";
+const API_KEY = "AQ.Ab8RN6JEdK-XbFxmHTef-Nrkj_hs42nwdxEyc_lwQkHcy1_IJg";
 const list = document.querySelector("#file-list");
 const empty = document.querySelector("#empty-state");
 const count = document.querySelector("#file-count");
