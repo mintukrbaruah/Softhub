@@ -1,5 +1,5 @@
 const FOLDER_ID = "1Ors4wVon1u24w-CvF3XYNEgy2SAIWayf";
-const API_KEY = "AQ.Ab8RN6JEdK-XbFxmHTef-Nrkj_hs42nwdxEyc_lwQkHcy1_IJg";
+const API_KEY = "AKfycbx7xWYSTGmbpcggCpST9i5DZLqVuppJjCXgxYAxIbCQKHPIbqra_r0QgtlsznpWXx_q";
 const list = document.querySelector("#file-list");
 const empty = document.querySelector("#empty-state");
 const count = document.querySelector("#file-count");
