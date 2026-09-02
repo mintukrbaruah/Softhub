@@ -1,0 +1,5 @@
+const FOLDER_ID = "1Ors4wVon1u24w-CvF3XYNEgy2SAIWayf";
+const ADMIN_TOKEN = "CHANGE_THIS_TO_A_LONG_RANDOM_SECRET";
+function doGet() { const folder=DriveApp.getFolderById(FOLDER_ID); const files=folder.getFiles(); const result=[]; while(files.hasNext()){const file=files.next(); result.push({id:file.getId(),name:file.getName(),size:file.getSize(),category:"Uncategorized",downloadUrl:"https://drive.google.com/uc?export=download&id="+file.getId()});} return ContentService.createTextOutput(JSON.stringify({files:result})).setMimeType(ContentService.MimeType.JSON); }
+function doPost(e) { const body=JSON.parse(e.postData.contents||"{}"); if(body.token!==ADMIN_TOKEN) return json({error:"Unauthorized"}); if(body.action==="upload"){const folder=DriveApp.getFolderById(FOLDER_ID);const blob=Utilities.newBlob(Utilities.base64Decode(body.data),body.mimeType,body.name);const file=folder.createFile(blob);return json({ok:true,id:file.getId(),name:file.getName()});} return json({error:"Unknown action"}); }
+function json(value){return ContentService.createTextOutput(JSON.stringify(value)).setMimeType(ContentService.MimeType.JSON)}
